@@ -48,47 +48,44 @@
         // TODO: I would like to have a circle that would make a circular motion, growing at the bottom and shrinking at the top.
         // I would this current code to be refactor into a timeline instead of individual tweens.
 
-        gsap.to(".circle", {
+
+        const tl = gsap.timeline({ repeat: -1 });
+
+        // Circle down
+        tl.to(".circle", {
             duration: 2,
             y: 200,
             scale: 2,
             ease: "sine.inOut",
-        });
+        })
+        .to(".circle", {
+            duration: 1,
+            x: 100,
+            ease: "sine.out",
+        }, '<')
+        .to(".circle", {
+            duration: 1,
+            x: 0,
+            ease: "sine.in",
+        }, '>')
 
-        gsap.to(".circle", {
+        // Circle up
+        .to(".circle", {
             duration: 2,
             y: 0,
             scale: 1,
             ease: "sine.inOut",
-            delay: 2
-        });
-
-        gsap.to(".circle", {
-            duration: 1,
-            x: 100,
-            ease: "sine.out",
-        });
-
-        gsap.to(".circle", {
-            duration: 1,
-            x: 0,
-            ease: "sine.in",
-            delay: 1
-        });
-
-        gsap.to(".circle", {
+        }, '>')
+        .to(".circle", {
             duration: 1,
             x: -100,
             ease: "sine.out",
-            delay: 2
-        });
-
-        gsap.to(".circle", {
+        }, '<')
+        .to(".circle", {
             duration: 1,
             x: 0,
             ease: "sine.in",
-            delay: 3
-        });
+        }, '>');
 
         // PS: check the console for the output.
     </script>
