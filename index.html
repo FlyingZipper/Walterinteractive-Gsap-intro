@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #fffce1;
+        }
+
+        body {
+            background-color: #0e100f;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: #21e851;
+        }
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #21e851;
+        }
+        
+    </style>
+    <script rel="preload" src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" >
+        <div class="circle" />
+    </div>
+    <script>
+        gsap.to('.circle', {duration: 2, x: 100});
+    </script>
+</body>
+</html>
