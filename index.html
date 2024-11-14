@@ -24,16 +24,16 @@
             border-radius: 50%;
             background-color: #21e851;
         }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
         
     </style>
     <script rel="preload" src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script>
-        // Write your gsap code here.
-
-        // I would like to have a circle that would make a circular motion, growing at the bottom and coming back at the top.
-
-        // PS: check the console for the output.
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -42,5 +42,53 @@
     <div class="container" >
         <div class="circle" />
     </div>
+    <script>
+        // Write your gsap code here.
+
+        // I would like to have a circle that would make a circular motion, growing at the bottom and
+        gsap.to(".circle", {
+            duration: 2,
+            y: 200,
+            scale: 2,
+            ease: "sine.inOut",
+        });
+
+        gsap.to(".circle", {
+            duration: 2,
+            y: 0,
+            scale: 1,
+            ease: "sine.inOut",
+            delay: 2
+        });
+
+        gsap.to(".circle", {
+            duration: 1,
+            x: 100,
+            ease: "sine.out",
+        });
+
+        gsap.to(".circle", {
+            duration: 1,
+            x: 0,
+            ease: "sine.in",
+            delay: 1
+        });
+
+        gsap.to(".circle", {
+            duration: 1,
+            x: -100,
+            ease: "sine.out",
+            delay: 2
+        });
+
+        gsap.to(".circle", {
+            duration: 1,
+            x: 0,
+            ease: "sine.in",
+            delay: 3
+        });
+
+        // PS: check the console for the output.
+    </script>
 </body>
 </html>
